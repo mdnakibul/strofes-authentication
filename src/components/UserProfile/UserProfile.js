@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../App';
+import Products from '../Products/Products';
 
 const UserProfile = () => {
     // Get UserContext 
@@ -24,6 +25,9 @@ const UserProfile = () => {
                     <h2 className="text-center pt-5">Welcome Back!</h2>
                 </div>
             </div>
+
+            <h2 className="text-center mt-5">Buy Some Products!</h2>
+            <Products/>
         </div>
     );
 };

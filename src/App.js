@@ -15,6 +15,7 @@ import UserProfile from './components/UserProfile/UserProfile';
 import ForgetPass from './components/ForgetPass/ForgetPass';
 import VerifyOTP from './components/VerifyOTP/VerifyOTP';
 import ResetPassword from './components/ResetPassword/ResetPassword';
+import ProductDetails from './components/ProductDetails/ProductDetails';
 
 export const UserContext = createContext();
 function App() {
@@ -46,6 +47,9 @@ function App() {
           </Route>
           <Route path="/user/reset-password">
             <ResetPassword />
+          </Route>
+          <Route path="/products/:productId">
+            <ProductDetails />
           </Route>
         </Switch>
       </Router>
