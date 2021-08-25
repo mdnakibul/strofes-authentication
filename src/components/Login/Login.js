@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const Login = () => {
@@ -56,7 +56,7 @@ const Login = () => {
                             <input type="password" {...register("password", { required: true })} className="form-control" id="password" />
                             {errors.password && <span>This field is required</span>}
                         </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button> <span className="ms-4"> <Link to="/user/forget-password"> Forget Password?</Link></span>
                     </form>
                 </div>
             </div>

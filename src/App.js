@@ -12,6 +12,7 @@ import GetPhoneNumber from './components/GetPhoneNumber/GetPhoneNumber';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
+import ForgetPass from './components/ForgetPass/ForgetPass';
 
 export const UserContext = createContext();
 function App() {
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/user-profile">
             <UserProfile />
+          </Route>
+          <Route path="/user/forget-password">
+            <ForgetPass />
           </Route>
         </Switch>
       </Router>
