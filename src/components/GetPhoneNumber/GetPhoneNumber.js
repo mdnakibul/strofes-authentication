@@ -22,13 +22,9 @@ const Getphone = () => {
             .then(serverData => {
                 console.log(serverData);
                 if (serverData.status === true) {
-                    setUserInfo({
-                        phone: data.phone,
-                        otp: '',
-                        type: ''
-                      })
-                      console.log(userInfo)
-                    history.push('/verify-otp')
+                    setUserInfo({...userInfo, phone: data.phone});
+                      console.log(userInfo);
+                    history.push('/register')
                 }
             })
     };
