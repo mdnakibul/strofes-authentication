@@ -9,15 +9,12 @@ import {
 
 // importing other components 
 import GetPhoneNumber from './components/GetPhoneNumber/GetPhoneNumber';
-import VerifyOTP from './components/VerifyOTP/VerifyOTP';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 export const UserContext = createContext();
 function App() {
-  const [userInfo, setUserInfo] = useState({
-    phone: '',
-    otp: '',
-    type: ''
-  })
+  const [userInfo, setUserInfo] = useState({})
   return (
     <UserContext.Provider value={[userInfo, setUserInfo]}>
       <Router>
@@ -25,8 +22,11 @@ function App() {
           <Route path="/get-otp">
             <GetPhoneNumber />
           </Route>
-          <Route path="/verify-otp">
-            <VerifyOTP />
+          <Route path="/register">
+            <Register />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route exact path="/">
             <GetPhoneNumber />
