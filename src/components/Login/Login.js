@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Login = () => {
-
+    // Get UserContext 
+    const [userInfo,setUserInfo] = useContext(UserContext);
     const history = useHistory();
     // User Login 
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    // User login 
     const onSubmit = data => {
         let deviceInfo = {
             browser: navigator.appCodeName,
@@ -24,6 +28,7 @@ const Login = () => {
         .then(response => response.json())
         .then(loginData =>{
             if(loginData.status === true){
+                setUserInfo({...userInfo, token: loginData.token});
                 history.push('/user-profile')
             }else{
                 alert(loginData.message)
