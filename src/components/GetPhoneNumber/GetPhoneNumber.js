@@ -27,6 +27,7 @@ const Getphone = () => {
                         otp: '',
                         type: ''
                       })
+                      console.log(userInfo)
                     history.push('/verify-otp')
                 }
             })

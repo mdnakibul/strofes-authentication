@@ -1,11 +1,9 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 
 const VerifyOTP = () => {
-    const [userInfo,setUserInfo] = useContext(UserContext);
-    const history = useHistory();
+    const [userInfo,] = useContext(UserContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = (data) => {
