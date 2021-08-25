@@ -11,6 +11,7 @@ import {
 import GetPhoneNumber from './components/GetPhoneNumber/GetPhoneNumber';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
+import UserProfile from './components/UserProfile/UserProfile';
 
 export const UserContext = createContext();
 function App() {
@@ -19,6 +20,9 @@ function App() {
     <UserContext.Provider value={[userInfo, setUserInfo]}>
       <Router>
         <Switch>
+        <Route exact path="/">
+            <GetPhoneNumber />
+          </Route>
           <Route path="/get-otp">
             <GetPhoneNumber />
           </Route>
@@ -28,8 +32,8 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/">
-            <GetPhoneNumber />
+          <Route path="/user-profile">
+            <UserProfile />
           </Route>
         </Switch>
       </Router>
