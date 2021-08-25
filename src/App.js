@@ -13,6 +13,8 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import UserProfile from './components/UserProfile/UserProfile';
 import ForgetPass from './components/ForgetPass/ForgetPass';
+import VerifyOTP from './components/VerifyOTP/VerifyOTP';
+import ResetPassword from './components/ResetPassword/ResetPassword';
 
 export const UserContext = createContext();
 function App() {
@@ -38,6 +40,12 @@ function App() {
           </Route>
           <Route path="/user/forget-password">
             <ForgetPass />
+          </Route>
+          <Route path="/user/verify-otp">
+            <VerifyOTP />
+          </Route>
+          <Route path="/user/reset-password">
+            <ResetPassword />
           </Route>
         </Switch>
       </Router>
